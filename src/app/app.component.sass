@@ -1,0 +1,73 @@
+.container
+	@media screen and (min-width: 768px)
+		height: 90%
+
+	@media screen and (max-width: 767px)
+		// No height set
+
+	position: inherit
+
+	.row
+		height: 100%
+		position: inherit
+
+		.home-cols 
+			@media screen and (max-width: 767px)
+				min-height: 100vh
+
+			.left-top
+				position: absolute
+				display: flex
+				flex-direction: column
+				align-items: center
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 100%
+
+				h1
+					font-family: 'Raleway'
+					font-weight: 200
+					font-size: 2em
+					padding: 0 0 1.5em 0
+
+					@media screen and (max-width: 400px)
+						font-size: 1.5em
+
+					@media screen and (max-width: 300px)
+						font-size: 1em
+
+			.right-bottom
+				width: 95%
+
+				@media screen and (min-width: 768px)
+					position: absolute
+					top: 50%
+					transform: translate(0, -50%)
+
+				@media screen and (max-width: 767px)
+					position: relative
+
+				.intro-paragraph
+					padding: 0 0 3em 0
+
+				.nav-buttons
+					display: flex
+					flex-direction: row
+					justify-content: space-around
+					
+					.btn
+						font-weight: 200
+
+			.avatar
+				height: 200px
+				border-radius: 100%
+				border: 1px solid black
+
+			.tab-space
+				display: inline-block
+				width: 20px
+
+		.home-cols:nth-child(2)
+			@media screen and (max-width: 767px)
+				min-height: 50vh

@@ -1,0 +1,48 @@
+html
+	font-size: 16px
+	background: white
+
+body
+	
+	font-family: 'Open Sans'
+
+	@media screen and (min-width: 768px)
+		height: 100vh
+
+	@media screen and (max-width: 767px)
+		min-height: 100vh
+
+	position: relative
+
+	nav
+		display: flex
+		align-items: center
+		position: relative
+		justify-content: space-between
+		padding: 2em
+
+		@media screen and (max-width: 639px)
+			flex-direction: column
+
+		h1, .nav
+			display: inline-flex
+
+		h1
+			font-size: 3.75em
+
+			@media screen and (max-width: 639px)
+				justify-content: center
+				font-size: 2.75em
+				margin-bottom: 0.5em
+
+	@import './app/app.component'
+	@import './app/projects/projects.component'
+
+// Style for the array-look for Pills
+@import './array'
+
+// Style for Footer
+footer
+	display: flex
+	justify-content: center
+	padding: 1em 0
