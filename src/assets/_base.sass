@@ -5,6 +5,8 @@ html
 body
 	
 	font-family: 'Open Sans'
+	max-width: 1552px
+	margin: 0 auto
 
 	@media screen and (min-width: 768px)
 		height: 100vh
@@ -35,7 +37,8 @@ body
 				font-size: 2.75em
 				margin-bottom: 0.5em
 
-	@import './app/app.component'
+	// View specific imports
+	@import './app/home/home.component'
 	@import './app/projects/projects.component'
 	@import './app/about/about.component'
 	@import './app/contact/contact.component'
@@ -44,7 +47,4 @@ body
 @import './array'
 
 // Style for Footer
-footer
-	display: flex
-	justify-content: center
-	padding: 1em 0
+@import './app/app.component'

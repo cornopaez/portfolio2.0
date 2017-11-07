@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
+import { NavBarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ContactComponent } from './contact/contact.component';
     ProjectsComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
