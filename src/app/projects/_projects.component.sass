@@ -4,6 +4,7 @@
 	margin-top: -1.5em
 	justify-content: flex-end
 	padding: 0 2em
+	max-width: 1552px
 
 	@media screen and (max-width: 639px)
 		justify-content: center
@@ -22,6 +23,19 @@
 	@media screen and (max-width: 639px)
 		justify-content: center
 
+	@media screen and (min-width: 640px)
+		width: 640px
+		margin: 0 auto
+
+	@media screen and (min-width: 944px)
+		width: 944px
+
+	@media screen and (min-width: 1248px)
+		width: 1248px
+
+	@media screen and (min-width: 1552px)
+		width: 1552px
+
 	.project
 		height: 25em
 		width: 17em
@@ -29,6 +43,7 @@
 		margin: 1em
 		border-radius: 1em
 
+	// Project card imports
 	@import './project_posters/portfolio'
 	@import './project_posters/pytdance'
 	@import './project_posters/adventure-game'

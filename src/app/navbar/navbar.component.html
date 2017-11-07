@@ -1,0 +1,10 @@
+<nav *ngIf="view">
+  <h1>{{ '{'}} {{ view.title }} {{ '}'}}</h1>
+  <div class="links">
+    <ul class="nav nav-pills">
+      <li *ngFor="let link of view.links" class="nav-item">
+        <a class="nav-link" routerLink="/{{ link }}">{{ link }}</a>
+      </li>
+    </ul> 
+  </div>
+</nav>
