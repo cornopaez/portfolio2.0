@@ -1,9 +1,9 @@
-<nav *ngIf="view">
-  <h1>{{ '{'}} {{ view.title }} {{ '}'}}</h1>
+<nav *ngIf="currentItems">
+  <h1>{{ '{'}} {{ currentItems.title }} {{ '}'}}</h1>
   <div class="links">
     <ul class="nav nav-pills">
-      <li *ngFor="let link of view.links" class="nav-item">
-        <a class="nav-link" routerLink="/{{ link }}">{{ link }}</a>
+      <li *ngFor="let link of currentItems.links" class="nav-item">
+        <a class="nav-link" routerLink="/{{ link }}" (click)="setNavbar(link)">{{ link }}</a>
       </li>
     </ul> 
   </div>

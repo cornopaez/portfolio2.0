@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { NavBarItems } from './navbar'
+import { NavbarService } from '../shared/navbar.service'
 
 @Component({
   selector: 'nav-bar',
@@ -8,5 +9,17 @@ import { NavBarItems } from './navbar'
 })
 
 export class NavBarComponent {
-  @Input() view: NavBarItems
+
+  private currentItems : NavBarItems = null;
+
+  constructor(private NavbarService : NavbarService) {
+    NavbarService.currentNavbarItems$.subscribe(items => {
+      this.currentItems = items;
+    });
+  }
+
+  setNavbar(route: string) {
+    this.NavbarService.setNavbarItems(route);
+  }
+
 }

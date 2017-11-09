@@ -8,6 +8,7 @@ import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavBarComponent } from './navbar/navbar.component';
+import { NavbarService } from './shared/navbar.service'
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { NavBarComponent } from './navbar/navbar.component';
     AppRoutingModule
   ],
   providers: [
-    Title
+    Title,
+    NavbarService
   ],
   bootstrap: [AppComponent]
 })
