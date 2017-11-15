@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class ProjectsDetailsComponent implements OnInit {
 
   // Class variables
-  private currentItems : NavBarItems = null;
+  private currentItems : any = null;
   private currentRoute : string;
   private projectName : string;
 
@@ -33,6 +33,14 @@ export class ProjectsDetailsComponent implements OnInit {
   getRouteParam(): void {
     this.projectName = this.route.snapshot.paramMap.get('name')
     // console.log(this.projectName)
+  }
+
+  private setBackgroundImage() : any {
+    var style = {
+      'background' : 'url(' + this.currentItems.image + ')'
+    }
+
+    return style;
   }
 
   // To be run on init
