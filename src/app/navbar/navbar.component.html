@@ -2,7 +2,9 @@
   <h1>{{ '{'}} {{ currentItems.title }} {{ '}'}}</h1>
   <div class="links">
     <ul class="nav nav-pills">
-      <li *ngFor="let link of currentItems.links" class="nav-item">
+      <li *ngFor="let link of currentItems.links" 
+          class="nav-item" 
+          [ngClass]='setArrayClass()'>
         <a class="nav-link" routerLink="/{{ link }}" (click)="setNavbar(link)">{{ link }}</a>
       </li>
     </ul> 

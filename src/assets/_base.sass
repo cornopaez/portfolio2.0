@@ -16,35 +16,21 @@ body
 
 	position: relative
 
-	nav
-		display: flex
-		align-items: center
-		position: relative
-		justify-content: space-between
-		padding: 2em
-
-		@media screen and (max-width: 639px)
-			flex-direction: column
-
-		h1, .nav
-			display: inline-flex
-
-		h1
-			font-size: 3.75em
-
-			@media screen and (max-width: 639px)
-				justify-content: center
-				font-size: 2.75em
-				margin-bottom: 0.5em
+	// NavBar styling
+	@import './app/navbar/navbar.component'
 
 	// View specific imports
 	@import './app/home/home.component'
 	@import './app/projects/projects.component'
 	@import './app/about/about.component'
 	@import './app/contact/contact.component'
+	@import './app/projects/project_details/project-details.component'
 
 // Style for the array-look for Pills
 @import './array'
+
+// Style for the content details
+@import './content-detail'
 
 // Style for Footer
 @import './app/app.component'

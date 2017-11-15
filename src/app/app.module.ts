@@ -8,7 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { NavBarComponent } from './navbar/navbar.component';
-import { NavbarService } from './shared/navbar.service'
+import { ViewContentService } from './shared/view-content.service'
+import { ProjectsDetailsComponent } from './projects/project_details/project-details.component'
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NavbarService } from './shared/navbar.service'
     HomeComponent,
     AboutComponent,
     ContactComponent,
-    NavBarComponent
+    NavBarComponent,
+    ProjectsDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { NavbarService } from './shared/navbar.service'
   ],
   providers: [
     Title,
-    NavbarService
+    ViewContentService
   ],
   bootstrap: [AppComponent]
 })

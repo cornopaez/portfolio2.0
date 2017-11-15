@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
-import { NavbarService } from '../shared/navbar.service'
+import { ViewContentService } from '../shared/view-content.service'
 
 
 @Component({
@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
 
   // Constrctor for the navbar service
   constructor(
-    private NavbarService : NavbarService,
+    private viewContentService : ViewContentService,
     private title : Title
     ) { }
 
@@ -24,11 +24,11 @@ export class ContactComponent implements OnInit {
     this.title.setTitle('Mauricio_Paez | Contact')
 
     // Check for current route in the service
-    this.currentRoute = this.NavbarService.getCurrentRoute();
+    this.currentRoute = this.viewContentService.getCurrentRoute();
 
     // Populate if current route is empty
     if (this.currentRoute.length === 0 || this.currentRoute !== 'Contact') {
-      this.NavbarService.setNavbarItems('Contact')
+      this.viewContentService.setNavbarItems('Contact')
     }
   }
 }

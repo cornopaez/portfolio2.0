@@ -1,0 +1,29 @@
+.detail
+	display: block
+	padding: 0 1em
+	position: relative
+	max-width: 70em
+	margin: 0 auto
+
+	.group
+		display: flex
+		flex-direction: column
+		position: relative
+		padding: 2em 0
+
+		@media screen and (max-width: 639px)
+			padding: 0 0 2em 0
+
+		h2
+			border-bottom: 1px solid black
+			padding: 0.2em 0
+
+		.points-container
+			display: flex
+			justify-content: flex-end
+
+			.points
+				max-width: 60%
+
+				@media screen and (max-width: 639px)
+					max-width: 100%
