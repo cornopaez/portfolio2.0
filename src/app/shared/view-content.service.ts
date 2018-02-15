@@ -56,16 +56,12 @@ export class ViewContentService {
 
   // Observable NavBarItems source
   private currentNavbarItemsSource = new Subject<any>();
-  private currentRoute : string = ''
 
   // Observable NavBarItems stream
   currentNavbarItems$ = this.currentNavbarItemsSource.asObservable();
 
-  // Navbar Commands
+  // Set navbar contents
   setNavbarItems(route: string) {
-
-    // Set currentRoute
-    this.currentRoute = route
 
     // Find items in array
     function findItem(item) {
@@ -78,7 +74,4 @@ export class ViewContentService {
     // console.log('NavbarService - setNavbarItems: The route is "' + route + '" and the current navbar items are: ' + this.currentNavbarItems$)
   }
 
-  getCurrentRoute() : string {
-    return this.currentRoute;
-  }
 }

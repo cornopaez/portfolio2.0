@@ -1,6 +1,7 @@
 import { Title } from '@angular/platform-browser';
 import { Component, Input, OnInit } from '@angular/core';
 import { NavBarItems } from '../navbar/navbar'
+import { Router } from '@angular/router';
 import { ViewContentService } from '../shared/view-content.service'
 
 @Component({
@@ -15,21 +16,22 @@ export class ProjectsComponent implements OnInit {
   // Constrctor for the navbar service
   constructor(
     private viewContentService : ViewContentService,
-    private title: Title
+    private title: Title,
+    private router: Router
     ) { }
 
   // To be run on init
   ngOnInit() {
 
+    // Get current route
+    this.currentRoute = this.router.url.slice(1)
+
+    // Set title of page
     this.title.setTitle('Mauricio_Paez | Projects')
 
-    // Check for current route in the service
-    this.currentRoute = this.viewContentService.getCurrentRoute();
+    // Set navbar content
+    this.viewContentService.setNavbarItems(this.currentRoute)
 
-    // Populate if current route is empty
-    if (this.currentRoute.length === 0 || this.currentRoute !== 'Projects') {
-      this.viewContentService.setNavbarItems('Projects')
-    }
   }
 
 }

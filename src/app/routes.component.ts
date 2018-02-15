@@ -28,6 +28,7 @@ const routes: Routes = [
   {
     path: 'details/:name',
     component: ProjectsDetailsComponent
+    // This needs to be made into a sub-route of Projects
   },
   { 
     path: 'Home', 
