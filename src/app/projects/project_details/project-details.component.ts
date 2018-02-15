@@ -47,7 +47,7 @@ export class ProjectsDetailsComponent implements OnInit {
   // To be run on init
   ngOnInit() {
 
-    console.log(this.route.url)
+    // console.log(this.route.url)
 
     // Get the route parameter
     this.getRouteParam();
