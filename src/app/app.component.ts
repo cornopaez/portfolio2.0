@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { ProjectsComponent } from './projects/projects.component'
 import { ViewContentService } from './shared/view-content.service';
@@ -12,7 +12,7 @@ import { ViewContentService } from './shared/view-content.service';
 
 export class AppComponent {
 
-  private currentContent;
+  private currentContent = null;
 
   constructor(
     private viewContentService : ViewContentService,
@@ -25,6 +25,7 @@ export class AppComponent {
   }
 
   ngOnInit(){
+    this.viewContentService.setPageContent('Home')
     console.log(this.currentContent)
   }
 }
