@@ -8,6 +8,7 @@ export class ViewContentService {
   private ITEMS = [
     {
       route: 'Home',
+      view_title: 'Mauricio_Páez | Developer',
       content: {
         // icons: array,
         image: '../assets/close-up.png',
