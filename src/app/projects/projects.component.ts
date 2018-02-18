@@ -30,7 +30,7 @@ export class ProjectsComponent implements OnInit {
     this.title.setTitle('Mauricio_Paez | Projects')
 
     // Set navbar content
-    this.viewContentService.setNavbarItems(this.currentRoute)
+    this.viewContentService.setPageContent(this.currentRoute)
 
   }
 

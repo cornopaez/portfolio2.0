@@ -24,20 +24,20 @@ export class HomeComponent implements OnInit {
     private router: Router
     ) { }
 
-  setNavbar(route: string) {
-    this.viewContentService.setNavbarItems(route);
-  }
+  // setNavbar(route: string) {
+  //   this.viewContentService.setPageContent(route);
+  // }
 
   ngOnInit() {
 
     // Get current route
-    this.currentRoute = this.router.url.slice(1)
+    this.currentRoute = 'Home'
 
     // Set title of page
     this.title.setTitle('Mauricio_Paez | Developer')
 
     // Set navbar content
-    this.viewContentService.setNavbarItems(this.currentRoute)
+    this.viewContentService.setPageContent(this.currentRoute)
   }
 
 }

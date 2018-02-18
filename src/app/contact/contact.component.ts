@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
 
     // Populate if current route is empty
     // if (this.currentRoute.length === 0 || this.currentRoute !== 'Contact') {
-      this.viewContentService.setNavbarItems(this.currentRoute)
+      this.viewContentService.setPageContent(this.currentRoute)
     // }
   }
 }

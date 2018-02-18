@@ -32,7 +32,7 @@ export class AboutComponent implements OnInit {
 
     // Populate if current route is empty or anything other than what it should be
     // if (this.currentRoute.length === 0 || this.currentRoute !== 'About') {
-      this.viewContentService.setNavbarItems(this.currentRoute)
+      this.viewContentService.setPageContent(this.currentRoute)
     // }
   }
 }

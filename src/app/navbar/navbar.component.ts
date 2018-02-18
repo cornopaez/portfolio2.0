@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { NavBarItems } from './navbar'
 import { ViewContentService } from '../shared/view-content.service'
 
@@ -10,14 +11,18 @@ import { ViewContentService } from '../shared/view-content.service'
 
 export class NavBarComponent {
 
-  private currentItems : NavBarItems = null;
+  private currentItems = null;
   private arrayClass : string;
 
-  constructor(private viewContentService : ViewContentService) {
-    viewContentService.currentNavbarItems$.subscribe(items => {
-      this.currentItems = items;
+  constructor(
+    private viewContentService : ViewContentService,
+    private router : Router
+    ) {
+      viewContentService.currentNavbarItems$.subscribe(items => {
+        this.currentItems = items;
     });
   }
+
 
   // This function adds a class that defines the amount of comas in the array views
   public setArrayClass() : string {
@@ -38,11 +43,15 @@ export class NavBarComponent {
 
     // console.log(this.arrayClass);
     return this.arrayClass;
-
   }
 
-  setNavbar(route: string) {
-    this.viewContentService.setNavbarItems(route);
+  ngOnInit() {
+    // console.log(this.router.url)
+    console.log('navbar.component - currentItems: ' + this.currentItems)
   }
+
+  // setNavbar(route: string) {
+  //   this.viewContentService.setNavbarItems(route);
+  // }
 
 }

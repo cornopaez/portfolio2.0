@@ -7,6 +7,30 @@ export class ViewContentService {
 
   private ITEMS = [
     {
+      route: 'Home',
+      content: {
+        // icons: array,
+        image: '../assets/close-up.png',
+        description: 'I\'m the description for this page!' ,
+        // source: string,
+        // footer: string
+        description_links: [
+          'Projects',
+          'About',
+          'Contact'
+        ]
+      }
+    },
+    {
+      route: 'Projects',
+      navbar: {
+        title: 'Projects',
+        links: [
+          'Home',
+          'About',
+          'Contact'
+        ]
+      },
       title: 'Projects',
       links: [
         'Home',
@@ -56,16 +80,19 @@ export class ViewContentService {
 
   // Observable NavBarItems source
   private currentNavbarItemsSource = new Subject<any>();
+  private currentPageItemsSource = new Subject<any>();
+  // private currentNavbarItemsSource = new Subject<any>();
 
   // Observable NavBarItems stream
   currentNavbarItems$ = this.currentNavbarItemsSource.asObservable();
+  currentPageItem$ = this.currentPageItemsSource.asObservable();
 
   // Set navbar contents
-  setNavbarItems(route: string) {
+  setPageContent(route: string) {
 
     // Find items in array
     function findItem(item) {
-      return item.title === route
+      return item.route === route
     }
 
     // Define the data source

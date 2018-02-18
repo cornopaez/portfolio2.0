@@ -56,7 +56,7 @@ export class ProjectsDetailsComponent implements OnInit {
     this.title.setTitle('Mauricio_Paez | ' + this.projectName)
 
     // Sets the page's content. This needs to be replaced with its won dedicated call to the db for content.
-    this.viewContentService.setNavbarItems(this.projectName)
+    this.viewContentService.setPageContent(this.projectName)
 
   }
 
