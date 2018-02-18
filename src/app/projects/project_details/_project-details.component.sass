@@ -1,0 +1,27 @@
+.jumbotron
+	position: relative
+	padding: 8.625em 0 0 0
+	height: 25em
+	// Background image is set dynamically by the component of this view. See setBackgroundImage()
+
+	.footnotes
+		position: absolute
+		bottom: 0
+		right: 0
+		padding: 0 2em 2em 0
+
+		h4
+			text-align: right
+
+		ul
+			padding: 0
+			margin: 0
+			display: flex
+			flex-direction: row-reverse
+			list-style: none
+
+			li
+				@include icon-size(2.5em)
+
+.project-detail
+	padding: 0 2em

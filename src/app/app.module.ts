@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
+import { ViewContentService } from './shared/view-content.service';
 // import { NavBarComponent } from './navbar/navbar.component';
 
 
@@ -24,7 +25,8 @@ import { ContactComponent } from './contact/contact.component';
     AppRoutingModule
   ],
   providers: [
-    Title
+    Title,
+    ViewContentService
   ],
   bootstrap: [AppComponent]
 })

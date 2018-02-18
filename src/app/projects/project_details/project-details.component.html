@@ -1,0 +1,30 @@
+<!-- <div class="jumbotron" [ngStyle]="setBackgroundImage()"> -->
+<div class="jumbotron">
+  <div class="footnotes">
+    <h4>Tech used</h4>
+    <ul>
+      <li *ngFor="let icon of currentItems.icons">
+        <i class="{{icon}}"></i>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="detail project-detail">
+  <div class="group">
+    <h2>
+      About this project
+    </h2>
+    <div class="points-container">
+      <div class="points">
+        <p>{{ currentItems.description }}</p>
+        <h4>Source Code</h4>
+        <p><a href="{{ currentItems.source }}">{{ currentItems.source }}</a></p>
+        <h4>Credits</h4>
+        <p>
+          {{ currentItems.footer }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
