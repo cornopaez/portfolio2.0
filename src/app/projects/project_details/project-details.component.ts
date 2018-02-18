@@ -1,6 +1,6 @@
 import { Title } from '@angular/platform-browser';
 import { Component, Input, OnInit } from '@angular/core';
-import { NavBarItems } from '../../navbar/navbar';
+// import { NavBarItems } from '../../navbar/navbar';
 import { ViewContentService } from '../../shared/view-content.service'
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -25,9 +25,9 @@ export class ProjectsDetailsComponent implements OnInit {
     private router: Router
     )
   { 
-    viewContentService.currentNavbarItems$.subscribe(items => {
-      this.currentItems = items;
-    });
+    // viewContentService.currentNavbarItems$.subscribe(items => {
+    //   this.currentItems = items;
+    // });
   }
 
   // Get the route param

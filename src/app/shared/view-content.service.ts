@@ -79,13 +79,13 @@ export class ViewContentService {
   ]
 
   // Observable NavBarItems source
-  private currentNavbarItemsSource = new Subject<any>();
-  private currentPageItemsSource = new Subject<any>();
+  private currentPageContentSource = new Subject<any>();
+  // private currentPageItemsSource = new Subject<any>();
   // private currentNavbarItemsSource = new Subject<any>();
 
   // Observable NavBarItems stream
-  currentNavbarItems$ = this.currentNavbarItemsSource.asObservable();
-  currentPageItem$ = this.currentPageItemsSource.asObservable();
+  currentPageContentItems$ = this.currentPageContentSource.asObservable();
+  // currentPageItem$ = this.currentPageItemsSource.asObservable();
 
   // Set navbar contents
   setPageContent(route: string) {
@@ -96,7 +96,7 @@ export class ViewContentService {
     }
 
     // Define the data source
-    this.currentNavbarItemsSource.next(this.ITEMS.find(findItem))
+    this.currentPageContentSource.next(this.ITEMS.find(findItem))
 
     // console.log('NavbarService - setNavbarItems: The route is "' + route + '" and the current navbar items are: ' + this.currentNavbarItems$)
   }
