@@ -12,9 +12,9 @@ import { Location } from '@angular/common';
 export class ProjectsDetailsComponent implements OnInit {
 
   // Class variables
-  private currentItems : any = null;
-  private currentRoute : string;
-  private projectName : string;
+  private currentContent;
+  private currentRoute;
+  private projectName;
 
   // Constrctor for the navbar service
   constructor(
@@ -25,9 +25,9 @@ export class ProjectsDetailsComponent implements OnInit {
     private router: Router
     )
   { 
-    // viewContentService.currentNavbarItems$.subscribe(items => {
-    //   this.currentItems = items;
-    // });
+    viewContentService.currentPageContentItems$.subscribe(items => {
+      this.currentContent = items;
+    });
   }
 
   // Get the route param
@@ -38,7 +38,7 @@ export class ProjectsDetailsComponent implements OnInit {
 
   private setBackgroundImage() : any {
     var style = {
-      'background' : 'url(' + this.currentItems.image + ')'
+      'background' : 'url(' + this.currentContent.content.image + ')'
     }
 
     return style;

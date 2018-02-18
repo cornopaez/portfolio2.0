@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule }   from './routes.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsDetailsComponent } from './projects/project_details/project-details.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { ViewContentService } from './shared/view-content.service';
   declarations: [
     AppComponent,
     ProjectsComponent,
+    ProjectsDetailsComponent,
     HomeComponent,
     AboutComponent,
     ContactComponent

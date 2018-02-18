@@ -1,9 +1,20 @@
 <!-- <div class="jumbotron" [ngStyle]="setBackgroundImage()"> -->
+<nav *ngIf="currentContent.navbar">
+  <h1>{{ '{'}} {{ currentContent.navbar.title }} {{ '}'}}</h1>
+  <div class="links">
+    <ul class="nav nav-pills">
+      <li *ngFor="let link of currentContent.navbar.links" class="nav-item">
+        <a class="nav-link" routerLink="/{{ link }}">{{ link }}</a>
+      </li>
+    </ul> 
+  </div>
+</nav>
+
 <div class="jumbotron">
   <div class="footnotes">
     <h4>Tech used</h4>
     <ul>
-      <li *ngFor="let icon of currentItems.icons">
+      <li *ngFor="let icon of currentContent.content.icons">
         <i class="{{icon}}"></i>
       </li>
     </ul>
@@ -17,12 +28,12 @@
     </h2>
     <div class="points-container">
       <div class="points">
-        <p>{{ currentItems.description }}</p>
+        <p>{{ currentContent.content.description }}</p>
         <h4>Source Code</h4>
-        <p><a href="{{ currentItems.source }}">{{ currentItems.source }}</a></p>
+        <p><a href="{{ currentContent.content.source }}">{{ currentContent.content.source }}</a></p>
         <h4>Credits</h4>
         <p>
-          {{ currentItems.footer }}
+          {{ currentContent.content.footer }}
         </p>
       </div>
     </div>
