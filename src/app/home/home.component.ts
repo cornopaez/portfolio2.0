@@ -25,7 +25,7 @@ export class HomeComponent {
 
   ngOnInit(){
     // Get the content for the appropriate view
-    this.router.url.length > 1 ? this.currentRoute = this.router.url.slice(1) : this.currentRoute = 'Home'
+    this.currentRoute = 'Home'
     this.viewContentService.setPageContent(this.currentRoute)
 
     // Set the title for this view

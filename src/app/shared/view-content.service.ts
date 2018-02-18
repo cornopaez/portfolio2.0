@@ -24,6 +24,7 @@ export class ViewContentService {
     },
     {
       route: 'Projects',
+      view_title: 'Mauricio_Páez | Projects',
       navbar: {
         title: 'Projects',
         links: [
