@@ -10,11 +10,8 @@ export class ViewContentService {
       route: 'Home',
       view_title: 'Mauricio_Páez | Developer',
       content: {
-        // icons: array,
         image: '../assets/close-up.png',
         description: 'I\'m the description for this page!' ,
-        // source: string,
-        // footer: string
         description_links: [
           'Projects',
           'About',
@@ -72,7 +69,7 @@ export class ViewContentService {
           "devicon-nodejs-plain",
           "devicon-heroku-plain"
         ],
-        image: './assets/IMG_0307.jpg',
+        image: './assets/IMG_0307.png',
         description: "This website is the first project I've taken on, at least on the Web Development front. It is designed with simplicity in mind following most of the concepts I have learned on Codecademy's HTML, CSS, SASS, and AngularJS tracks. Of course, this site is entirely over engineered to showcase some skills.",
         source: 'https://github.com/cornopaez/cornopaez.github.io',
         footer: 'Made by: Mauricio Páez - Pittsburgh 2017',
