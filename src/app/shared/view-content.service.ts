@@ -32,12 +32,16 @@ export class ViewContentService {
       }
     },
     {
-      title: 'About',
-      links: [
-        'Home',
-        'Projects',
-        'Contact'
-      ]
+      route: 'About',
+      view_title: 'Mauricio_Páez | About',
+      navbar: {
+        title: 'About',
+        links: [
+          'Home',
+          'Projects',
+          'Contact'
+        ]
+      }
     },
     {
       title: 'Contact',
