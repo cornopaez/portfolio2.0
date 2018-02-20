@@ -15,6 +15,7 @@ export class ProjectsDetailsComponent implements OnInit {
   private currentContent;
   private currentRoute;
   private projectName;
+  private arrayClass;
 
   // Constrctor for the navbar service
   constructor(

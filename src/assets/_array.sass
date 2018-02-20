@@ -25,14 +25,22 @@
 		.nav-item
 			position: relative
 
-			&:nth-child(1):after,
-			&:nth-child(2):after
+			.nav-link
+				@media screen and (max-width: 639px)
+					padding: 0.5em 0.75em
+
+		.array-coma-2
+			&:nth-child(-n+2):after
 				content: ","
 				font-size: 1em
 				position: absolute
 				bottom: 10%
 				right: 0
 
-			.nav-link
-				@media screen and (max-width: 639px)
-					padding: 0.5em 0.75em
+		.array-coma-3
+			&:nth-child(-n+3):after
+				content: ","
+				font-size: 1em
+				position: absolute
+				bottom: 10%
+				right: 0

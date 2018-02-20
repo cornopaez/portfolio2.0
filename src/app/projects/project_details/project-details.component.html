@@ -3,7 +3,7 @@
   <h1>{{ '{'}} {{ currentContent.navbar.title }} {{ '}'}}</h1>
   <div class="links">
     <ul class="nav nav-pills">
-      <li *ngFor="let link of currentContent.navbar.links" class="nav-item">
+      <li *ngFor="let link of currentContent.navbar.links" class="nav-item array-coma-3">
         <a class="nav-link" routerLink="/{{ link }}">{{ link }}</a>
       </li>
     </ul> 
