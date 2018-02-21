@@ -103,10 +103,12 @@ export class ViewContentService {
     }
   ]
 
+  private 
+
   // Observable NavBarItems source
   private currentPageContentSource = new Subject<any>();
-  // private currentPageItemsSource = new Subject<any>();
-  // private currentNavbarItemsSource = new Subject<any>();
+  // private currentEducationSource = new Subject<any>();
+  // private currentSource = new Subject<any>();
 
   // Observable NavBarItems stream
   currentPageContentItems$ = this.currentPageContentSource.asObservable();

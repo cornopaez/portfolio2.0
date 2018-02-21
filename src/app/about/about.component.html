@@ -18,14 +18,14 @@
       <!-- Each section has its own way of using data in the db. -->
 
       <!-- Points for backgounrd -->
-      <div *ngIf="item.title == 'Background'" class="points">
+      <div *ngIf="item.title == 'Background'" class="background points">
         <p *ngIf="item.description">
           {{ item.description }}
         </p>
       </div>
 
       <!-- Points for Languages and Tech -->
-      <div *ngIf="item.title == 'Languages and Technology'" class="points">
+      <div *ngIf="item.title == 'Languages and Technology'" class="languages points">
         <ul>
           <li *ngFor="let icon of item.finer_points">
             <i class="{{icon}}"></i>
@@ -34,7 +34,7 @@
       </div>
 
       <!-- Points for Experience -->
-      <div *ngIf="item.title == 'Experience'" class="points">
+      <div *ngIf="item.title == 'Experience'" class="experience points">
         <ul>
           <li *ngFor="let item of item.finer_points">
             {{ item }}
@@ -43,7 +43,7 @@
       </div>
       
       <!-- Points for Education -->
-      <div *ngIf="item.title == 'Education and Certifications'" class="points">
+      <div *ngIf="item.title == 'Education and Certifications'" class="education points">
         <ul>
           <li *ngFor="let item of item.finer_points">
             {{ item }}
