@@ -11,6 +11,8 @@ import { ViewContentService } from '../shared/view-content.service';
 export class AboutComponent {
   private currentContent;
   private currentRoute;
+  private currentExperience;
+  private currentEducation;
 
   constructor(
     private viewContentService : ViewContentService,
