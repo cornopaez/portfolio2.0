@@ -61,12 +61,16 @@ export class ViewContentService {
       }
     },
     {
-      title: 'Contact',
-      links: [
-        'Home',
-        'Projects',
-        'About'
-      ]
+      route: 'Contact',
+      view_title: 'Mauricio_Páez | Contact',
+      navbar: {
+        title: 'Contact',
+        links: [
+          'Home',
+          'Projects',
+          'About'
+        ]
+      }
     },
     {
       route: 'Portfolio',
