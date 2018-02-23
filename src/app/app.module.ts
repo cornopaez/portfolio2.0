@@ -1,5 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule }   from './routes.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -24,6 +25,7 @@ import { ViewContentService } from './shared/view-content.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [
