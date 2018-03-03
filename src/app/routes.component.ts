@@ -16,6 +16,12 @@ const routes: Routes = [
   { 
     path: 'Projects', 
     component: ProjectsComponent
+    // children: [
+    //   {
+    //     path: '/:name',
+    //     component: ProjectsDetailsComponent
+    //   }
+    // ]
   },
   { 
     path: 'About', 

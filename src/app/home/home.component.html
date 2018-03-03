@@ -12,7 +12,7 @@
           {{ currentContent.content.description }}
         </div>
         <div class="nav-buttons">
-          <a *ngFor="let link of currentContent.content.description_links" href="/{{ link }}" class="btn btn-dark">{{ link }}</a>
+          <a *ngFor="let link of currentContent.content.description_links" routerLink="/{{ link }}" class="btn btn-dark">{{ link }}</a>
         </div>
       </div>
     </div> <!-- End of Column -->
