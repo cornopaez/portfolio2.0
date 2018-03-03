@@ -9,24 +9,26 @@ import { ViewContentService } from '../shared/view-content.service';
 
 export class HomeComponent {
 
-  private currentContent;
+  private currentContent = {
+      view_title: 'Mauricio_Páez | Developer',
+      content: {
+        image: '../assets/close-up.png',
+        description: 'I\'m the description for this page!' ,
+        description_links: [
+          'Projects',
+          'About',
+          'Contact'
+        ]
+      }
+    };
+
   private currentRoute;
 
   constructor(
-    private viewContentService : ViewContentService,
-    private title : Title,
-    private router : Router
-    ) {
-
-    viewContentService.currentPageContentItems$.subscribe(content => {
-      this.currentContent = content
-    })
-  }
+    private title : Title
+    ) {}
 
   ngOnInit(){
-    // Get the content for the appropriate view
-    this.currentRoute = 'Home'
-    this.viewContentService.setPageContent(this.currentRoute)
 
     // Set the title for this view
     this.title.setTitle(this.currentContent.view_title)

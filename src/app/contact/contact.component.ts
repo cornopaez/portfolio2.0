@@ -9,24 +9,24 @@ import { ViewContentService } from '../shared/view-content.service';
 })
 
 export class ContactComponent {
-  private currentContent;
-  private currentRoute;
+  
+  private currentContent = {
+      view_title: 'Mauricio_Páez | Contact',
+      navbar: {
+        title: 'Contact',
+        links: [
+          'Home',
+          'Projects',
+          'About'
+        ]
+      }
+    };
 
   constructor(
-    private viewContentService : ViewContentService,
-    private title : Title,
-    private router : Router
-    ) {
-
-    viewContentService.currentPageContentItems$.subscribe(content => {
-      this.currentContent = content
-    })
-  }
+    private title : Title
+    ) {}
 
   ngOnInit(){
-    // Get the content for the appropriate view
-    this.currentRoute = this.router.url.slice(1)
-    this.viewContentService.setPageContent(this.currentRoute)
 
     // Set the title for this view
     this.title.setTitle(this.currentContent.view_title)
