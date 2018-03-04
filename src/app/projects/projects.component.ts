@@ -35,6 +35,14 @@ export class ProjectsComponent {
           'fa fa-file-code-o'
         ]
       }
+    },
+    {
+      title: 'PYT Dance',
+      subtitle:'Codecademy Capstone Project',
+      custom_html: '',
+      image: '',
+      card_class: 'dance',
+      icons: ''
     }
   ];
 

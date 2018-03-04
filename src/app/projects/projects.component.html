@@ -60,10 +60,11 @@
 
 </div>
 
-<div *ngFor="let card of currentCards" class="projects">
+<div class="projects">
 
-  <div class="project {{ card.card_class }}" routerLink="details/{{ card.title }}">
+  <div *ngFor="let card of currentCards" class="project {{ card.card_class }}" routerLink="details/{{ card.title }}">
     <h3>{{ card.title }}</h3>
+    <h6 *ngIf="card.subtitle">{{ card.subtitle }}</h6>
     <img *ngIf="card.image" src="{{ card.image }}">
     <ng-container *ngIf="card.icons">
       <div class="{{ card.icons.class_name }}">
