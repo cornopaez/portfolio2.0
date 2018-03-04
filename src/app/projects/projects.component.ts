@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import { Title }     from '@angular/platform-browser';
-import { Router } from '@angular/router';
+// import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ViewContentService } from '../shared/view-content.service';
 import { ProjectsService } from './projects.service';
 
@@ -23,42 +25,23 @@ export class ProjectsComponent {
       }
     };
 
-  private currentCards = [
-    {
-      title: 'Portfolio',
-      subtitle:'',
-      custom_html: '',
-      image: '',
-      card_class: 'portfolio',
-      icons: {
-        class_name: 'folder-icon',
-        icons: [
-          'fa fa-folder-o',
-          'fa fa-file-code-o'
-        ]
-      }
-    },
-    {
-      title: 'PYT Dance',
-      subtitle:'Codecademy Capstone Project',
-      custom_html: '',
-      image: '',
-      card_class: 'dance',
-      icons: ''
-    }
-  ];
+  private currentCards;
 
   constructor(
     private title : Title,
-    private projectsService: ProjectsService
+    private projectsService: ProjectsService,
+    private route: ActivatedRoute
     ) {}
 
   ngOnInit(){
 
-    this.projectsService.setPageContent()
+    // Get the data for the projects
+    this.route.data.subscribe(content => {
+      this.currentCards = content.projects
+    })
 
     // Set the title for this view
     this.title.setTitle(this.currentContent.view_title)
-    // console.log(this.currentContent)
+
   }
 }

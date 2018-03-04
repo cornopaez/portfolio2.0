@@ -21,10 +21,10 @@ router.use('*', (req, res, next) => {
 	}
 });
 
-router.get('/', (req, res) => res.send('I\'m up and running!'))
+// router.get('/', (req, res) => res.send('I\'m up and running!'))
 
-// router.get('*', function (req, res) {
-// 	// Load landing page
-// 	res.sendFile('index.html', {root: "./" });
-// });
+router.get('*', function (req, res) {
+	// Load landing page
+	res.sendFile('index.html', {root: "./dist" });
+});
 

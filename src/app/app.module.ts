@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { ViewContentService } from './shared/view-content.service';
 import { ProjectsService } from './projects/projects.service';
 import { ProjectDetailsService } from './projects/project_details/project-details.service';
+import { ProjectsResolver } from './projects/projects-resolver.component'
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProjectDetailsService } from './projects/project_details/project-detail
     Title,
     ViewContentService,
     ProjectsService,
-    ProjectDetailsService
+    ProjectDetailsService,
+    ProjectsResolver
   ],
   bootstrap: [AppComponent]
 })

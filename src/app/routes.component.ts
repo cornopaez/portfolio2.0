@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent }   from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsResolver } from './projects/projects-resolver.component';
 import { ProjectsDetailsComponent } from './projects/project_details/project-details.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+
 
 const routes: Routes = [
   { 
@@ -15,7 +17,10 @@ const routes: Routes = [
   },
   { 
     path: 'Projects', 
-    component: ProjectsComponent
+    component: ProjectsComponent,
+    resolve: {
+      projects: ProjectsResolver
+    }
   },
   { 
     path: 'About', 
