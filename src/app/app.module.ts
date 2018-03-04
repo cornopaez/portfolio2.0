@@ -11,9 +11,7 @@ import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { ViewContentService } from './shared/view-content.service';
 import { ProjectsService } from './projects/projects.service';
-import { PtojectDetailsService } from './projects/project-dtails/ptoject-details.service';
 import { ProjectDetailsService } from './projects/project_details/project-details.service';
-// import { NavBarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -24,7 +22,6 @@ import { ProjectDetailsService } from './projects/project_details/project-detail
     HomeComponent,
     AboutComponent,
     ContactComponent
-    // NavBarComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +32,6 @@ import { ProjectDetailsService } from './projects/project_details/project-detail
     Title,
     ViewContentService,
     ProjectsService,
-    PtojectDetailsService,
     ProjectDetailsService
   ],
   bootstrap: [AppComponent]

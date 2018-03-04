@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title }     from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ViewContentService } from '../shared/view-content.service';
+import { ProjectsService } from './projects.service';
+
 
 @Component({
   templateUrl: './projects.component.html'
@@ -47,10 +49,13 @@ export class ProjectsComponent {
   ];
 
   constructor(
-    private title : Title
+    private title : Title,
+    private projectsService: ProjectsService
     ) {}
 
   ngOnInit(){
+
+    this.projectsService.setPageContent()
 
     // Set the title for this view
     this.title.setTitle(this.currentContent.view_title)
