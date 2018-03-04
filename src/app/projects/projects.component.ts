@@ -21,6 +21,23 @@ export class ProjectsComponent {
       }
     };
 
+  private currentCards = [
+    {
+      title: 'Portfolio',
+      subtitle:'',
+      custom_html: '',
+      image: '',
+      card_class: 'portfolio',
+      icons: {
+        class_name: 'folder-icon',
+        icons: [
+          'fa fa-folder-o',
+          'fa fa-file-code-o'
+        ]
+      }
+    }
+  ];
+
   constructor(
     private title : Title
     ) {}

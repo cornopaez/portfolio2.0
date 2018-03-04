@@ -57,5 +57,19 @@
     <h3>The Bank</h3>
     <img src="../assets/spiro.png">
   </div>
-  
+
+</div>
+
+<div *ngFor="let card of currentCards" class="projects">
+
+  <div class="project {{ card.card_class }}" routerLink="details/{{ card.title }}">
+    <h3>{{ card.title }}</h3>
+    <img *ngIf="card.image" src="{{ card.image }}">
+    <ng-container *ngIf="card.icons">
+      <div class="{{ card.icons.class_name }}">
+        <i *ngFor="let icon of card.icons.icons" class="{{ icon }}" aria-hidden="true"></i>
+      </div>
+    </ng-container>
+  </div>  
+
 </div>
