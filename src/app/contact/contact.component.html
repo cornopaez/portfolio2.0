@@ -10,69 +10,88 @@
 </nav>
 
 <div class="jumbotron">
-  <h1>
-    Let's Talk
-  </h1>
-  <p>
-    Every now and then, reading through this website is not enough to get the answers you're looking for. I value all input greatly and I want to give you access to every communication channel I have at my disposal, so you contact me however you like contacting people.
-  </p>
+  <div class="text-container">
+    <h1>
+      Let's Talk
+    </h1>
+    <p>
+      Every now and then, reading through this website is not enough to get the answers you're looking for. I value all input greatly and I want to give you access to every communication channel I have at my disposal, so you contact me however you like contacting people.
+    </p>
+  </div>
 </div>
 
-<div class="tabs">
-  <!-- Tabs -->
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link active" id="scl-ntwk-tab" data-toggle="tab" href="#scl-ntwk" role="tab" aria-controls="social-networks" aria-expanded="true">Social Networks</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="email-tab" data-toggle="tab" href="#email" role="tab" aria-controls="email">Email</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab" aria-controls="form">Contact Form</a>
-    </li>
-  </ul> <!-- End of Tabs -->
-
-  <!-- Tab Contents -->
-  <div class="tab-content" id="myTabContent">
-    <!-- Social Networks Tab -->
-    <div class="tab-pane fade show active" id="scl-ntwk" role="tabpanel" aria-labelledby="scl-ntwk-tab">
-      I'm the social network tab!
+<div class="card-columns">
+  <div class="card social1">
+    <div class="card-body">
+      <div class="icon">
+        <i class="devicon-twitter-plain"></i>
+      </div>
+      <h5 class="card-title">Contact me via Twitter</h5>
+      <p class="card-text">Find me and my thoroughly un-memorable twits in the popular media site.</p>
+      <a href="#" class="btn btn-primary">Go to Twitter</a>
     </div>
-
-    <!-- Email Tab -->
-    <div class="tab-pane fade" id="email" role="tabpanel" aria-labelledby="email-tab">
-      <p>For those who don't like, or are not part of, social networks (kudos to you!) you can reach me the old-fashined way via email through your daily email software:</p>
-      <a href="mailto:contact@cornopaez.com"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+  </div>
+  <div class="card social2">
+    <div class="card-body">
+      <div class="icon">
+        <i class="devicon-facebook-plain"></i>
+      </div>
+      <h5 class="card-title">Contact me via Facebook</h5>
+      <p class="card-text">Find me amongts all of your extended family's posts.</p>
+      <a href="#" class="btn btn-primary">Go to Facebook</a>
     </div>
-
-    <!-- Form Tab -->
-    <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
-      <p>Lastly, if you like filling out forms (and who doesn't?) you can use this one to get in touch with me.</p>
-
-      <form name="contact_form" action="/contact" method="post" novalidate>
-        <div class="form-group">
-          <label for="inputName">Name</label>
-          <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter your name" name="user_given_name" ng-model="user_name" required>
-        </div>
-        <div class="form-group">
-          <label for="inputEmail">Email address</label>
-          <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" name="user_email" ng-model="user_email" required>
-          <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else. Only for callback purposes.</small>
-        </div>
-        <div class="form-group">
-          <label for="textarea">What's going on?</label>
-          <textarea class="form-control" id="textarea" rows="5" name="user_message" ng-model="user_text" required></textarea>
-        </div>
-        <div class="form-check">
-          <label class="form-check-label">
-            <input type="checkbox" class="form-check-input" name="urgent_message" ng-model="urgent">
-            This is an urgent message!
-          </label>
-        </div>
-        <!-- <div vc-recaptcha key="model.key"></div> -->
-        <!-- TODO: Re-captcha needs to be developed to be compatible with this new site -->
-        <button class="btn btn-primary" type="submit" ng-disabled="contact_form.$invalid">Make Mauricio respond!</button>
-      </form>
-    </div> <!-- End of Form Tab -->
-  </div> <!-- End of Tab Contents -->
+  </div>
+  <div class="card social3">
+    <div class="card-body">
+      <div class="icon">
+        <i class="fab fa-angellist"></i>
+      </div>
+      <h5 class="card-title">Find me in AngelList</h5>
+      <p class="card-text">Head over to the place where start-ups hang out.</p>
+      <a href="#" class="btn btn-primary">Go to AngelList</a>
+    </div>
+  </div>
+  <div class="card bg-primary text-white text-center p-3 social4">
+    <div class="card-body">
+      <div class="icon">
+        <i class="far fa-envelope"></i>
+      </div>
+      <h5 class="card-title">Send me an old fasioned email</h5>
+      <p class="card-text">Not a fan of social media? No worries- I've got you covered. Send me some electronic mail.</p>
+      <a href="#" class="btn btn-primary">Send Email</a>
+    </div>
+  </div>
+  <div class="card text-center social5">
+    <div class="card-body">
+      <div class="icon">
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <h5 class="card-title">How about LinkedIn?</h5>
+      <p class="card-text">Now is the time to finally visit the site. It's the least you can do after marking their emails as "Spam" all those years ago.</p>
+      <a href="#" class="btn btn-primary">Go to LinkedIn</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img" src="./assets/tibearius.png" alt="Card image">
+    <div class="card-body">
+      <p class="card-text">Here, have a Corgi pic. It's only fair. His name is Tibearius- Bear for short.</p>
+    </div>
+  </div>
+  <div class="card p-3 text-right comments">
+    <div class="card-body">
+      <div class="icon">
+        <i class="far fa-comments"></i>
+      </div>
+      <h5 class="card-title">Got Comments?</h5>
+      <p class="card-text">Fill out this handy form and send me your comments.</p>
+      <a href="#" class="btn btn-warning">Go to Form</a>
+    </div>
+  </div>
+  <div class="card leftover">
+    <div class="card-body">
+      <h5 class="card-title">...and finally</h5>
+      <p class="card-text">Thank you for dropping by. I look forward to getting in touch with you.</p>
+      <p class="card-text"><small class="text-muted">Site last updated on #date</small></p>
+    </div>
+  </div>
 </div>
