@@ -18,6 +18,22 @@
 			border-bottom: 1px solid black
 			padding: 0.2em 0
 
+		.icon-container
+			.lang-icon
+				display: inline-block
+				style: none
+				padding: 1em
+				@include icon-size(3.5em)
+
+		.experience-container,
+		.education-container
+			>li
+				list-style: none
+
+				ul
+					li
+						list-style: initial
+
 		.points-container
 			display: flex
 			justify-content: flex-end

@@ -9,48 +9,46 @@
   </div>
 </nav>
 
-<div *ngFor="let item of currentContent.content.points" class="detail">
-  <div class="group">
-    <h2>
-      {{ item.title }}
-    </h2>
+<div class="detail">
+  <div class="group"> <!-- Background -->
+    <h2>{{ background.title }}</h2>
     <div class="points-container">
-      <!-- Each section has its own way of using data in the db. -->
-
-      <!-- Points for backgounrd -->
-      <div *ngIf="item.title == 'Background'" class="background points">
-        <p *ngIf="item.description">
-          {{ item.description }}
-        </p>
+      <div class="background points">
+        <p>{{ background.description }}</p>
       </div>
-
-      <!-- Points for Languages and Tech -->
-      <div *ngIf="item.title == 'Languages and Technology'" class="languages points">
-        <ul>
-          <li *ngFor="let icon of item.finer_points">
-            <i class="{{icon}}"></i>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Points for Experience -->
-      <div *ngIf="item.title == 'Experience'" class="experience points">
-        <ul>
-          <li *ngFor="let item of item.finer_points">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-      
-      <!-- Points for Education -->
-      <div *ngIf="item.title == 'Education and Certifications'" class="education points">
-        <ul>
-          <li *ngFor="let item of item.finer_points">
-            {{ item }}
-          </li>
-        </ul>
-      </div>
-
     </div>
+  </div>
+
+  <div class="group"> <!-- Lanaguages and Tech -->
+    <h2>{{ languages.title }}</h2>
+    <ul class="icon-container">
+      <li *ngFor="let icon of languages.icons" class="lang-icon">
+        <i class="{{ icon }}"></i>
+      </li>
+    </ul>
+  </div>
+
+  <div class="group"> <!-- Experience -->
+    <h2>{{ experience.title }}</h2>
+    <ul class="experience-container">
+      <li *ngFor="let item of experience.entities">
+        <h4>{{ item.title }}</h4>
+        <ul *ngFor="let point of item.points">
+          <li [innerHTML]="point"></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="group"> <!-- Education -->
+    <h2>{{ education.title }}</h2>
+    <ul class="education-container">
+      <li *ngFor="let item of education.entities">
+        <h4>{{ item.title }}</h4>
+        <ul *ngFor="let point of item.points">
+          <li [innerHTML]="point"></li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </div>
