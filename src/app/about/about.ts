@@ -14,6 +14,7 @@ export const LANGUAGES = {
     "devicon-angularjs-plain",
     "devicon-express-original-wordmark",
     "devicon-nodejs-plain",
+    "devicon-typescript-plain",
     "devicon-bootstrap-plain-wordmark",
     "devicon-git-plain-wordmark",
     "devicon-github-plain-wordmark",
