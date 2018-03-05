@@ -31,7 +31,7 @@
   <div class="group"> <!-- Experience -->
     <h2>{{ experience.title }}</h2>
     <ul class="experience-container">
-      <li *ngFor="let item of experience.entities">
+      <li *ngFor="let item of experience.entities" class="entities">
         <h4>{{ item.title }}</h4>
         <ul *ngFor="let point of item.points">
           <li [innerHTML]="point"></li>
@@ -43,7 +43,7 @@
   <div class="group"> <!-- Education -->
     <h2>{{ education.title }}</h2>
     <ul class="education-container">
-      <li *ngFor="let item of education.entities">
+      <li *ngFor="let item of education.entities" class="entities">
         <h4>{{ item.title }}</h4>
         <ul *ngFor="let point of item.points">
           <li [innerHTML]="point"></li>
