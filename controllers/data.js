@@ -20,7 +20,7 @@ router.get('/projects', (req, res) => {
 router.get('/:name', (req, res) => {
 
 	var name = req.params.name;
-	queryDb.getDocumentForView(name)
+	queryDb.getProjectView(name)
 	.then((data) => {
 		res.json(data)
 	})

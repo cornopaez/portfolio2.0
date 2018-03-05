@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component'
 import { Title }     from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import { ViewContentService } from '../shared/view-content.service';
+// import { ViewContentService } from '../shared/view-content.service';
 
 @Component({
   templateUrl: './about.component.html'

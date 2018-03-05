@@ -5,6 +5,7 @@ import { AppComponent }   from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsResolver } from './projects/projects-resolver.component';
 import { ProjectsDetailsComponent } from './projects/project_details/project-details.component';
+import { ProjectDetailResolver } from './projects/project_details/project-details-resolver.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
@@ -31,9 +32,11 @@ const routes: Routes = [
     component: ContactComponent 
   },
   {
-    path: 'details/:name',
-    component: ProjectsDetailsComponent
-    // This needs to be made into a sub-route of Projects
+    path: 'projectDetails/:name',
+    component: ProjectsDetailsComponent,
+    resolve: {
+      project: ProjectDetailResolver
+    }
   },
   { 
     path: 'Home', 

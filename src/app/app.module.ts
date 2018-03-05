@@ -9,10 +9,10 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
-import { ViewContentService } from './shared/view-content.service';
 import { ProjectsService } from './projects/projects.service';
 import { ProjectDetailsService } from './projects/project_details/project-details.service';
 import { ProjectsResolver } from './projects/projects-resolver.component'
+import { ProjectDetailResolver } from './projects/project_details/project-details-resolver.component'
 
 
 @NgModule({
@@ -31,10 +31,11 @@ import { ProjectsResolver } from './projects/projects-resolver.component'
   ],
   providers: [
     Title,
-    ViewContentService,
+    // ViewContentService,
     ProjectsService,
     ProjectDetailsService,
-    ProjectsResolver
+    ProjectsResolver,
+    ProjectDetailResolver
   ],
   bootstrap: [AppComponent]
 })

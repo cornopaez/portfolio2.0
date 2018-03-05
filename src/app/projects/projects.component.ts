@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Title }     from '@angular/platform-browser';
-// import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ViewContentService } from '../shared/view-content.service';
 import { ProjectsService } from './projects.service';
 
 
@@ -37,6 +35,7 @@ export class ProjectsComponent {
 
     // Get the data for the projects
     this.route.data.subscribe(content => {
+      // console.log(content)
       this.currentCards = content.projects
     })
 
