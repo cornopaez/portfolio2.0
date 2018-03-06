@@ -1,0 +1,25 @@
+<div class="form-container">
+  <form name="contact_form" action="/contact" method="post" novalidate>
+    <div class="form-group">
+      <label for="inputName">Name</label>
+      <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter your name" name="user_given_name" ng-model="user_name" required>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Enter email" name="user_email" ng-model="user_email" required>
+      <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else. Only for callback purposes.</small>
+    </div>
+    <div class="form-group">
+      <label for="textarea">What's going on?</label>
+      <textarea class="form-control" id="textarea" rows="5" name="user_message" ng-model="user_text" required></textarea>
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="urgent_message" ng-model="urgent">
+        This is an urgent message!
+      </label>
+    </div>
+    <div vc-recaptcha key="model.key"></div>
+    <button class="btn btn-primary" type="submit" ng-disabled="contact_form.$invalid">Make Mauricio respond!</button>
+  </form>
+</div>

@@ -9,6 +9,7 @@ import { ProjectDetailResolver } from './projects/project_details/project-detail
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
+import { ContactFormComponent } from './contact/contact-form/contact-form.component'
 
 
 const routes: Routes = [
@@ -29,7 +30,13 @@ const routes: Routes = [
   },
   { 
     path: 'Contact', 
-    component: ContactComponent 
+    component: ContactComponent,
+    children: [
+      {
+        path: 'form',
+        component: ContactFormComponent
+      }
+    ]
   },
   {
     path: 'projectDetails/:name',

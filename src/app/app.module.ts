@@ -12,7 +12,8 @@ import { ContactComponent } from './contact/contact.component';
 import { ProjectsService } from './projects/projects.service';
 import { ProjectDetailsService } from './projects/project_details/project-details.service';
 import { ProjectsResolver } from './projects/projects-resolver.component'
-import { ProjectDetailResolver } from './projects/project_details/project-details-resolver.component'
+import { ProjectDetailResolver } from './projects/project_details/project-details-resolver.component';
+import { ContactFormComponent } from './contact/contact-form/contact-form.component'
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProjectDetailResolver } from './projects/project_details/project-detail
     ProjectsDetailsComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
