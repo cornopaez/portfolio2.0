@@ -37,7 +37,6 @@ import { ProjectsHomeComponent } from './projects/projects-home/projects-home.co
   ],
   providers: [
     Title,
-    // ViewContentService,
     ProjectsService,
     ProjectDetailsService,
     ProjectsResolver,
