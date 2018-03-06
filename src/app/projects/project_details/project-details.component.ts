@@ -1,9 +1,7 @@
-import { Title } from '@angular/platform-browser';
 import { Component, Input, OnInit } from '@angular/core';
-// import { NavBarItems } from '../../navbar/navbar';
-// import { ViewContentService } from '../../shared/view-content.service'
 import { Router, ActivatedRoute } from '@angular/router';
-// import { Location } from '@angular/common';
+
+import { ProjectsComponent } from '../projects.component'
 
 @Component({
   templateUrl: './project-details.component.html'
@@ -15,8 +13,8 @@ export class ProjectsDetailsComponent implements OnInit {
   private currentContent;
 
   constructor(
-    private title: Title,
-    private route : ActivatedRoute
+    private route : ActivatedRoute,
+    private pc: ProjectsComponent
     )
   { }
 
@@ -25,6 +23,9 @@ export class ProjectsDetailsComponent implements OnInit {
     // Assign the data to local variable for use
     this.route.data.subscribe(content => {
       this.currentContent = content.project[0].view
+
+      // Set the title for the Projects view
+      this.pc.setViewTitle(content.project[0].view.view_title)
     })
   }
 

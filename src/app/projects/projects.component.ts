@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Title }     from '@angular/platform-browser';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { ProjectsService } from './projects.service';
-
 
 @Component({
   templateUrl: './projects.component.html'
@@ -11,7 +7,8 @@ import { ProjectsService } from './projects.service';
 
 export class ProjectsComponent {
 
-  private currentContent ={
+  // private currentContent
+  private currentContent = {
       view_title: 'Mauricio_Páez | Projects',
       navbar: {
         title: 'Projects',
@@ -23,24 +20,15 @@ export class ProjectsComponent {
       }
     };
 
-  private currentCards;
-
   constructor(
-    private title : Title,
-    private projectsService: ProjectsService,
-    private route: ActivatedRoute
+    private title : Title
     ) {}
 
-  ngOnInit(){
-
-    // Get the data for the projects
-    this.route.data.subscribe(content => {
-      // console.log(content)
-      this.currentCards = content.projects
-    })
-
+  setViewTitle(viewTitle){
     // Set the title for this view
-    this.title.setTitle(this.currentContent.view_title)
+    this.title.setTitle(viewTitle)
+  }
 
+  ngOnInit(){
   }
 }

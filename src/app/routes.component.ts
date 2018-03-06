@@ -5,6 +5,7 @@ import { AppComponent }   from './app.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsResolver } from './projects/projects-resolver.component';
 import { ProjectsDetailsComponent } from './projects/project_details/project-details.component';
+import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component';
 import { ProjectDetailResolver } from './projects/project_details/project-details-resolver.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
@@ -21,9 +22,22 @@ const routes: Routes = [
   { 
     path: 'Projects', 
     component: ProjectsComponent,
-    resolve: {
-      projects: ProjectsResolver
-    }
+    children: [
+      {
+        path: ':name',
+        component: ProjectsDetailsComponent,
+        resolve: {
+          project: ProjectDetailResolver
+        }
+      },
+      {
+        path: '',
+        component: ProjectsHomeComponent,
+        resolve: {
+          projects: ProjectsResolver
+        },
+      }
+    ]
   },
   { 
     path: 'About', 
@@ -42,13 +56,6 @@ const routes: Routes = [
         component: ContactHomeComponent
       }
     ]
-  },
-  {
-    path: 'projectDetails/:name',
-    component: ProjectsDetailsComponent,
-    resolve: {
-      project: ProjectDetailResolver
-    }
   },
   { 
     path: 'Home', 
