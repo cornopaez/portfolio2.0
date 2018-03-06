@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component'
+import { ContactHomeComponent } from './contact/contact-home/contact-home.component'
 
 
 const routes: Routes = [
@@ -29,12 +30,16 @@ const routes: Routes = [
     component: AboutComponent 
   },
   { 
-    path: 'Contact', 
+    path: 'Contact',
     component: ContactComponent,
     children: [
       {
         path: 'form',
         component: ContactFormComponent
+      },
+      {
+        path: '',
+        component: ContactHomeComponent
       }
     ]
   },
