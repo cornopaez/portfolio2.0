@@ -1,7 +1,7 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule, FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule }   from './routes.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -33,9 +33,9 @@ import { ProjectsHomeComponent } from './projects/projects-home/projects-home.co
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule,
-    FormsModule
+    AppRoutingModule
   ],
   providers: [
     Title,

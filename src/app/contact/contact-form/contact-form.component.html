@@ -1,7 +1,7 @@
 <div class="form-container">
   <a routerLink="/Contact" class="btn btn-warning"><i class="fas fa-chevron-left"></i> Go Back</a>
   <h3 class="form-title">Mauricio's Most Excellent Contact Form</h3>
-  <form name="contact_form" #messageForm="ngForm">
+  <form name="contact_form" [formGroup]="contactForm" novalidate>
     <div class="form-group">
       <label for="inputName">Name</label>
       <input 
@@ -9,10 +9,8 @@
           class="form-control" 
           id="inputName" 
           aria-describedby="nameHelp" 
-          placeholder="Enter your name" 
-          required 
-          [(ngModel)]="message.name" 
-          name="name">
+          placeholder="Enter your name"
+          formControlName="name">
     </div>
     <div class="form-group">
       <label for="inputEmail">Email address</label>
@@ -21,10 +19,8 @@
         class="form-control" 
         id="inputEmail" 
         aria-describedby="emailHelp" 
-        placeholder="Enter email" 
-        required 
-        [(ngModel)]="message.email" 
-        name="email">
+        placeholder="Enter email"
+        formControlName="email">
       <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else. Only for callback purposes.</small>
     </div>
     <div class="form-group">
@@ -33,21 +29,20 @@
         class="form-control" 
         id="textarea" 
         rows="5"
-        required 
-        [(ngModel)]="message.message" 
-        name="message"></textarea>
+        formControlName="message"></textarea>
     </div>
     <div class="form-check">
       <label class="form-check-label">
         <input 
           type="checkbox" 
-          class="form-check-input" 
-          [(ngModel)]="message.urgent" 
-          name="urgent">
+          class="form-check-input"
+          formControlName="urgent">
         This is an urgent message!
       </label>
     </div>
     <!-- <div vc-recaptcha key="model.key"></div> -->
-    <button class="btn btn-primary" type="submit" [disabled]="!messageForm.form.valid">Make Mauricio respond!</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!contactForm.valid">Make Mauricio respond!</button>
   </form>
 </div>
+
+<!-- <p>Form content: {{ contactForm.value | json }} </p> -->
