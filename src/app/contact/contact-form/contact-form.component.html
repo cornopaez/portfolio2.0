@@ -32,8 +32,7 @@
       <textarea 
         class="form-control" 
         id="textarea" 
-        rows="5" 
-        name="user_message" 
+        rows="5"
         required 
         [(ngModel)]="message.message" 
         name="message"></textarea>
@@ -43,13 +42,12 @@
         <input 
           type="checkbox" 
           class="form-check-input" 
-          name="urgent_message" 
           [(ngModel)]="message.urgent" 
           name="urgent">
         This is an urgent message!
       </label>
     </div>
     <!-- <div vc-recaptcha key="model.key"></div> -->
-    <button class="btn btn-primary" type="submit">Make Mauricio respond!</button>
+    <button class="btn btn-primary" type="submit" [disabled]="!messageForm.form.valid">Make Mauricio respond!</button>
   </form>
 </div>
