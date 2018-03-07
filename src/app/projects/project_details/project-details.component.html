@@ -20,7 +20,7 @@
     </h2>
     <div class="points-container">
       <div class="points">
-        <p>{{ currentContent.content.description }}</p>
+        <p [innerHtml]=currentContent.content.description></p>
         <h4>Source Code</h4>
         <p><a href="{{ currentContent.content.source }}">{{ currentContent.content.source }}</a></p>
         <h4>Credits</h4>
