@@ -1,6 +1,11 @@
 <div class="projects">
 
-  <div *ngFor="let project of currentCards" class="project {{ project.card.card_class }}" routerLink="/Projects/{{ project.project_name }}">
+  <div 
+    *ngFor="let project of currentCards" 
+    class="project {{ project.card.card_class }}" 
+    [style.backgroundImage]="'url(' + project.card.background_image + ')'"
+    routerLink="/Projects/{{ project.project_name }}">
+
     <h3>{{ project.card.title }}</h3>
     <h6 *ngIf="project.card.subtitle">{{ project.card.subtitle }}</h6>
     <img *ngIf="project.card.image" src="{{ project.card.image }}">
