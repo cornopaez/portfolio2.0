@@ -13,6 +13,6 @@ export class ProjectDetailsService {
   // Get projects content
   getProjectDetails(name: string) : Observable<any> {
     // console.log('ProjectDetailsService: The name of the projects is ' + name)
-    return this.http.get('http://localhost:3000/data/' + name)
+    return this.http.get('/data/' + name)
   }
 }

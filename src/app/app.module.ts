@@ -17,6 +17,7 @@ import { ProjectDetailResolver } from './projects/project_details/project-detail
 import { ContactFormComponent } from './contact/contact-form/contact-form.component'
 import { ContactHomeComponent } from './contact/contact-home/contact-home.component'
 import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component'
+import { ContactFormService } from './contact/contact-form/contact-form.service';
 
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
@@ -47,7 +48,8 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
     ProjectsService,
     ProjectDetailsService,
     ProjectsResolver,
-    ProjectDetailResolver
+    ProjectDetailResolver,
+    ContactFormService
   ],
   bootstrap: [AppComponent]
 })

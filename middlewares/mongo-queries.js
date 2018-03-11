@@ -3,7 +3,8 @@ const connection = require("./mongo-connection.js");
 
 module.exports = {
 	getProjectView : getProjectView,
-	getProjectsCards: getProjectsCards
+	getProjectsCards: getProjectsCards,
+	postContactRequest: postContactRequest
 }
 
 function getProjectView(projectName) {
@@ -50,5 +51,26 @@ function getProjectsCards() {
 				resolve(docs)
 			}
 		});
+	})
+}
+
+function postContactRequest(info) {
+	return new Promise((resolve, reject) => {
+		var db = connection.getDb()
+		var query = {
+			"name": info.name,
+			"email": info.email,
+			"text": info.message,
+			"urgent": info.urgent,
+			"date": Date()
+		}
+
+		var cursor = db.collection('requests').insertOne(query, (error, response) => {
+			if (error) {
+				reject(error)
+			} else {
+				resolve(query)
+			}
+		})
 	})
 }

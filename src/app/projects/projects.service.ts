@@ -11,6 +11,6 @@ export class ProjectsService {
 
   // Get projects content
   getPageContent() : Observable<any> {
-    return this.http.get('http://localhost:3000/data/projects')
+    return this.http.get('/data/projects')
   }
 }
