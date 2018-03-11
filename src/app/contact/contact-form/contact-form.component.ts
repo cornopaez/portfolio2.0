@@ -39,6 +39,10 @@ export class ContactFormComponent implements OnInit {
       ],
       urgent: [
         false
+      ],
+      recaptcha: [
+        null, 
+        Validators.required
       ]
     })
   }
