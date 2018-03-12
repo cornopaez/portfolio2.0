@@ -4,7 +4,6 @@ import { Router, Resolve, RouterStateSnapshot,
          ActivatedRouteSnapshot } from '@angular/router';
  
  import { ProjectsService } from './projects.service'
-// import { Crisis, CrisisService }  from './crisis.service';
  
 @Injectable()
 export class ProjectsResolver implements Resolve<any> {

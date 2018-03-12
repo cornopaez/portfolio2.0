@@ -1,8 +1,10 @@
+// NG Imports
 import { BrowserModule, Title } from '@angular/platform-browser'
 import { NgModule } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule, FormsModule }   from '@angular/forms'
 
+// App imports
 import { AppRoutingModule }   from './routes.component'
 import { ProjectsComponent } from './projects/projects.component'
 import { ProjectsDetailsComponent } from './projects/project_details/project-details.component'
@@ -18,7 +20,10 @@ import { ContactFormComponent } from './contact/contact-form/contact-form.compon
 import { ContactHomeComponent } from './contact/contact-home/contact-home.component'
 import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component'
 import { ContactFormService } from './contact/contact-form/contact-form.service';
+import { ContactSuccessComponent } from './contact/contact-success/contact-success.component'
+import { ErrorComponent } from './error/error.component';
 
+// reCaptcha imports
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 
@@ -33,7 +38,9 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
     ContactComponent,
     ContactFormComponent,
     ContactHomeComponent,
-    ProjectsHomeComponent
+    ProjectsHomeComponent,
+    ContactSuccessComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,

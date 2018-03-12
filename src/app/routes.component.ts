@@ -12,6 +12,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { ContactFormComponent } from './contact/contact-form/contact-form.component'
 import { ContactHomeComponent } from './contact/contact-home/contact-home.component'
+import { ContactSuccessComponent } from './contact/contact-success/contact-success.component'
+import { ErrorComponent } from './error/error.component'
 
 
 const routes: Routes = [
@@ -52,10 +54,18 @@ const routes: Routes = [
         component: ContactFormComponent
       },
       {
+        path: 'FormSuccess',
+        component: ContactSuccessComponent
+      },
+      {
         path: '',
         component: ContactHomeComponent
       }
     ]
+  },
+  {
+    path: 'Error', 
+    component: ErrorComponent 
   },
   { 
     path: 'Home', 

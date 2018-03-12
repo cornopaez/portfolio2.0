@@ -22,7 +22,7 @@ export class ContactFormComponent implements OnInit {
     this.createForm()
   }
 
-  // This function created the reactive
+  // This function creates the reactive form
   private createForm(){
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -33,11 +33,17 @@ export class ContactFormComponent implements OnInit {
     })
   }
 
-  // This form is run when the form is submitted
+  // This function is run when the form is submitted
   onSubmit() {
-    this.cfs.submitContactForm(this.contactForm.value).subscribe(data => {
-      console.log(data)
-    })
+    this.cfs.submitContactForm(this.contactForm.value).subscribe(
+      data => {
+        this.router.navigate(['/Contact/FormSuccess'])
+      },
+      error => {
+        console.error('Something\'s gone wrong when retrieving the projects. Looks like a #{error.status} error.')
+        this.router.navigate(['/Error'])
+      }
+    )
   }
 
   ngOnInit() {
