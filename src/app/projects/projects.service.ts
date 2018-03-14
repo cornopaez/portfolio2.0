@@ -6,16 +6,7 @@ import { catchError, retry } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { Router } from '@angular/router';
 
-// import { ProjectCard } from './project-card'
-
-export interface ProjectCard {
-    title : string
-    subtitle? : string
-    custom_html?: string
-    image?: string
-    icons? : object
-    card_class?: string
-}
+import { ProjectCard } from './project-card'
 
 @Injectable()
 export class ProjectsService {
@@ -25,7 +16,13 @@ export class ProjectsService {
     private router: Router
     ) { }
 
-  // Get projects content
+  /**
+    Retrieves the data necessary from the database for the view.
+    
+    @return Observable<ProjectCard[]> - This function returns an Observable containing an array of ProjectCards.
+                                        If the operation fails, it prints a user-friendly message in the browsers console
+                                        and returns an empty array.
+  */
   getPageContent() : Observable<ProjectCard[]> {
     return this.http.get<Array<ProjectCard>>('/data/projects')
     .pipe(

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -14,7 +15,15 @@ export class ContactFormService {
     private router: Router
     ) { }
 
-  submitContactForm(contactInformation) {
+  /**
+    Submit the information populated in the form to the database
+
+    @param contactInformation - The data populated in the form. The data must be of type Message
+    @return Observable<Message> - The function returns an Observable of type Message if the operation succeeds.
+                                  Otherwise, the function prints a user-friendly message to the browser's console and
+                                  returns an empty observable.
+  */
+  submitContactForm(contactInformation) : Observable<Message> {
     let url = '/data/contact'
     return this.http.post<Message>(url, contactInformation)
       .pipe(
