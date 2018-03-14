@@ -1,9 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
 import { Router } from '@angular/router';
+
+// import { ProjectCard } from './project-card'
+
+export interface ProjectCard {
+    title : string
+    subtitle? : string
+    custom_html?: string
+    image?: string
+    icons? : object
+    card_class?: string
+}
 
 @Injectable()
 export class ProjectsService {
@@ -14,30 +26,31 @@ export class ProjectsService {
     ) { }
 
   // Get projects content
-  getPageContent() : Observable<any> {
-    return this.http.get('/data/projects')
+  getPageContent() : Observable<ProjectCard[]> {
+    return this.http.get<Array<ProjectCard>>('/data/projects')
     .pipe(
       retry(3),
-      catchError(this.handleError)
+      catchError(this.handleError('getPageContent',[]))
     )
   }
 
-    // Error Handling
-  private handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      console.error('An error occurred:', error.error.message);
-      // this.router.navigate(['/Error'])
-    } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong,
-      console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
-      // this.router.navigate(['/Error'])
-    }
-    // return an ErrorObservable with a user-facing error message
-    return new ErrorObservable(
-      'Something bad happened; please try again later.');
-  };
+  /**
+   * Handle Http operation that failed.
+   * Let the app continue.
+   * @param operation - name of the operation that failed
+   * @param result - optional value to return as the observable result
+   */
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+
+      // TODO: send the error to remote logging infrastructure
+      // console.error(error); // log to console instead
+
+      // TODO: better job of transforming error for user consumption
+      console.error(`Could not get the projects. Specifically, ${operation}() failed: ${error.message}.`);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
 }

@@ -40,7 +40,6 @@ export class ContactFormComponent implements OnInit {
         this.router.navigate(['/Contact/FormSuccess'])
       },
       error => {
-        console.error('Something\'s gone wrong when retrieving the projects. Looks like a #{error.status} error.')
         this.router.navigate(['/Error'])
       }
     )
