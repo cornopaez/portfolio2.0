@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { ContactFormService } from './contact-form.service'
+import { DatabaseService } from '../../shared/database.service'
 import { Message } from './message'
 
 @Component({
@@ -16,7 +16,7 @@ export class ContactFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private cfs: ContactFormService,
+    private dbs: DatabaseService,
     private router : Router
     ) {
     this.createForm()
@@ -35,9 +35,15 @@ export class ContactFormComponent implements OnInit {
 
   // This function is run when the form is submitted
   onSubmit() {
-    this.cfs.submitContactForm(this.contactForm.value).subscribe(
+
+    this.dbs.submitContactForm(this.contactForm.value).subscribe(
       data => {
-        this.router.navigate(['/Contact/FormSuccess'])
+        if (data) {
+          this.router.navigate(['/Contact/FormSuccess'])
+        } else {
+          this.router.navigate(['/Error'])
+        }
+        
       },
       error => {
         this.router.navigate(['/Error'])

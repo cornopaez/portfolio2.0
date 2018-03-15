@@ -5,13 +5,13 @@ import { Observable }             from 'rxjs/Observable';
 import { Router, Resolve, RouterStateSnapshot,
          ActivatedRouteSnapshot } from '@angular/router';
  
- import { ProjectDetailsService } from './project-details.service'
-// import { Crisis, CrisisService }  from './crisis.service';
+import { DatabaseService } from '../../shared/database.service'
+
  
 @Injectable()
 export class ProjectDetailResolver implements Resolve<any> {
   constructor(
-    private pds:  ProjectDetailsService,
+    private dbs: DatabaseService,
     private router: Router
     ) {}
  
@@ -19,9 +19,8 @@ export class ProjectDetailResolver implements Resolve<any> {
     // Get the project name from route
     var projectName = route.paramMap.get('name')
 
-    // Return project data only if data is found in db, otherwise go to /Projects
-    return this.pds.getProjectDetails(projectName).take(1).map(project => {
-      if (project.length === 1) {
+    return this.dbs.getProjectDetails(projectName).take(1).map(project => {
+      if (project) {
         return project;
       } else {
         this.router.navigate(['/Projects']);

@@ -69,7 +69,7 @@ function postContactRequest(info) {
 			if (error) {
 				reject(error)
 			} else {
-				resolve(query)
+				resolve(response)
 			}
 		})
 	})

@@ -12,20 +12,18 @@ import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component'
 import { AppComponent } from './app.component'
 import { ContactComponent } from './contact/contact.component'
-import { ProjectsService } from './projects/projects.service'
-import { ProjectDetailsService } from './projects/project_details/project-details.service'
 import { ProjectsResolver } from './projects/projects-resolver.component'
 import { ProjectDetailResolver } from './projects/project_details/project-details-resolver.component'
 import { ContactFormComponent } from './contact/contact-form/contact-form.component'
 import { ContactHomeComponent } from './contact/contact-home/contact-home.component'
 import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component'
-import { ContactFormService } from './contact/contact-form/contact-form.service';
 import { ContactSuccessComponent } from './contact/contact-success/contact-success.component'
 import { ErrorComponent } from './error/error.component';
 
 // reCaptcha imports
 import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
+import { DatabaseService } from './shared/database.service';
 
 
 @NgModule({
@@ -52,11 +50,9 @@ import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
   ],
   providers: [
     Title,
-    ProjectsService,
-    ProjectDetailsService,
     ProjectsResolver,
     ProjectDetailResolver,
-    ContactFormService
+    DatabaseService
   ],
   bootstrap: [AppComponent]
 })
