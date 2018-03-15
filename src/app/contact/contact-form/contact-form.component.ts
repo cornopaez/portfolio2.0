@@ -22,7 +22,10 @@ export class ContactFormComponent implements OnInit {
     this.createForm()
   }
 
-  // This function creates the reactive form
+  /**
+    This function creates the reactive form used in this view.
+    It creates 5 fields and defines its validators.
+  */
   private createForm(){
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -33,7 +36,13 @@ export class ContactFormComponent implements OnInit {
     })
   }
 
-  // This function is run when the form is submitted
+  /**
+    This function runs when the submit button is pressed in the form.
+    It submits the value of the form and expects a result from the db.
+    If a result is returned, it redirects the user to the FormSuccess view.
+    Otherwise, it redirects the user the unified Error view and it prints a 
+    user-friendly error in the browser's console.
+  */
   onSubmit() {
 
     this.dbs.submitContactForm(this.contactForm.value).subscribe(

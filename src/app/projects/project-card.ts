@@ -3,6 +3,9 @@ export class ProjectCard {
     subtitle? : string
     custom_html?: string
     image?: string
-    icons? : object
+    icons? : {
+      class_name?: string
+      icons: string[]
+    }
     card_class?: string
 }
