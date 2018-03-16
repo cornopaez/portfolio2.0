@@ -13,6 +13,7 @@ export const LANGUAGES = {
     "devicon-jquery-plain-wordmark",
     "devicon-angularjs-plain",
     "devicon-express-original-wordmark",
+    "devicon-mongodb-plain-wordmark",
     "devicon-nodejs-plain",
     "devicon-typescript-plain",
     "devicon-bootstrap-plain-wordmark",

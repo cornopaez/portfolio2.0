@@ -6,8 +6,9 @@ import { BACKGROUND, LANGUAGES, EXPERIENCE, EDUCATION } from './about'
 // import { ViewContentService } from '../shared/view-content.service';
 
 @Component({
-  templateUrl: './about.component.html'
-})
+  templateUrl: './about.component.html',
+  styleUrls: ['./about-specific.component.sass']
+})  
 
 export class AboutComponent {
   
