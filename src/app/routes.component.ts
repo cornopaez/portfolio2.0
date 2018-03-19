@@ -71,6 +71,10 @@ const routes: Routes = [
     path: 'Home', 
     redirectTo: '', 
     pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'Error'
   }
 ];
 
