@@ -19,6 +19,9 @@ import { ContactHomeComponent } from './contact/contact-home/contact-home.compon
 import { ProjectsHomeComponent } from './projects/projects-home/projects-home.component'
 import { ContactSuccessComponent } from './contact/contact-success/contact-success.component'
 import { ErrorComponent } from './error/error.component';
+import { DialogService } from './shared/dialog.service'
+import { CanDeactivateGuard } from './shared/can-deactivate-guard.service'
+
 
 // reCaptcha imports
 import { RecaptchaModule } from 'ng-recaptcha';
@@ -52,7 +55,9 @@ import { DatabaseService } from './shared/database.service';
     Title,
     ProjectsResolver,
     ProjectDetailResolver,
-    DatabaseService
+    DatabaseService,
+    DialogService,
+    CanDeactivateGuard
   ],
   bootstrap: [AppComponent]
 })

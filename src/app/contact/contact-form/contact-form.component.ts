@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { DialogService }  from '../../shared/dialog.service';
 
 import { DatabaseService } from '../../shared/database.service'
 import { Message } from './message'
@@ -17,7 +19,8 @@ export class ContactFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private dbs: DatabaseService,
-    private router : Router
+    private router : Router,
+    private ds: DialogService
     ) {
     this.createForm()
   }
@@ -58,6 +61,16 @@ export class ContactFormComponent implements OnInit {
         this.router.navigate(['/Error'])
       }
     )
+  }
+
+  canDeactivate(): Observable<boolean> | boolean {
+    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
+    if (!this.contactForm.dirty || this.contactForm.pristine) {
+      return true;
+    }
+    // Otherwise ask the user with the dialog service and return its
+    // observable which resolves to true or false when the user decides
+    return this.ds.confirm('Are you sure you want to discard changes?');
   }
 
   ngOnInit() {

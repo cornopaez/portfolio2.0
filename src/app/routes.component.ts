@@ -14,6 +14,7 @@ import { ContactFormComponent } from './contact/contact-form/contact-form.compon
 import { ContactHomeComponent } from './contact/contact-home/contact-home.component'
 import { ContactSuccessComponent } from './contact/contact-success/contact-success.component'
 import { ErrorComponent } from './error/error.component'
+import { CanDeactivateGuard } from './shared/can-deactivate-guard.service'
 
 
 const routes: Routes = [
@@ -51,7 +52,8 @@ const routes: Routes = [
     children: [
       {
         path: 'form',
-        component: ContactFormComponent
+        component: ContactFormComponent,
+        canDeactivate: [CanDeactivateGuard]
       },
       {
         path: 'FormSuccess',
