@@ -15,6 +15,7 @@ import { Message } from './message'
 export class ContactFormComponent implements OnInit {
 
   contactForm : FormGroup
+  formSent : boolean
 
   constructor(
     private fb: FormBuilder,
@@ -47,6 +48,7 @@ export class ContactFormComponent implements OnInit {
     user-friendly error in the browser's console.
   */
   onSubmit() {
+    this.formSent = true
 
     this.dbs.submitContactForm(this.contactForm.value).subscribe(
       data => {
@@ -64,8 +66,8 @@ export class ContactFormComponent implements OnInit {
   }
 
   canDeactivate(): Observable<boolean> | boolean {
-    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
-    if (!this.contactForm.dirty || this.contactForm.pristine) {
+    // Allow synchronous navigation (`true`) if form is empty or unchanged
+    if (!this.contactForm.dirty || this.contactForm.pristine || this.formSent) {
       return true;
     }
     // Otherwise ask the user with the dialog service and return its

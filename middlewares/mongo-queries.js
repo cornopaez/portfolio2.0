@@ -40,7 +40,8 @@ function getProjectsCards() {
 			'card': 1,
 			'project_name': 1
 		}
-		var cursor = db.collection('projects').find().project(projection)
+		var sort = {'lastUpdate':-1}
+		var cursor = db.collection('projects').find().sort(sort).project(projection)
 
 		cursor.toArray((err, docs) => {
 			// console.log(docs)

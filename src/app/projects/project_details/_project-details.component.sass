@@ -1,5 +1,5 @@
 .btn-link
-	padding: 0.5em 0.75em 0.5em 2em
+	padding: 0.5em 0.75em 1.5em 2em
 
 .jumbotron
 	position: relative
@@ -34,6 +34,36 @@
 
 			li
 				@include icon-size(2.5em)
+
+	// Specific cover image styling
+	&.portfolio
+		background-size: cover
+
+	&.dance
+		background-size: cover
+
+	&.murders
+		background-size: contain
+		background-color: #fff
+
+		> .footnotes
+			color: #000
+
+	&.health
+		background-size: cover
+
+	&.mongomart
+		background-size: cover
+
+	&.bank
+		background-size: cover
+
+		> .footnotes
+			color: #000
+
+	&.portfolio2
+		background-size: cover
+
 
 .project-detail
 	padding: 0 2em

@@ -2,7 +2,7 @@
   <a routerLink="/Projects" class="btn btn-link"><i class="fas fa-chevron-left"></i>  Back to Projects</a>  
 </div>
 
-<div class="jumbotron" [style.backgroundImage]="'url(' + currentContent.content.image + ')'">
+<div class="jumbotron" [style.backgroundImage]="'url(' + currentContent.content.image + ')'" [ngClass]=currentContent.content.imageStyle>
   <div class="footnotes">
     <h4>Tech used</h4>
     <ul>
@@ -24,9 +24,7 @@
         <h4>Source Code</h4>
         <p><a href="{{ currentContent.content.source }}">{{ currentContent.content.source }}</a></p>
         <h4>Credits</h4>
-        <p>
-          {{ currentContent.content.footer }}
-        </p>
+        <p [innerHtml]=currentContent.content.footer></p>
       </div>
     </div>
   </div>
