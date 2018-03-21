@@ -24,7 +24,7 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // Static files
-app.use(express.static('dist'))
+app.use(express.static(__dirname + '/dist'))
 
 // Routes for getting and posting data in the site
 app.use('/data', data)
