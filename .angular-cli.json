@@ -21,9 +21,10 @@
       "styles": [
         "styles.sass"
       ],
-      "scripts": [
-        {"postinstall": "ng build --aot -prod"}
-      ],
+      "scripts": {
+        "postinstall": "ng build -prod"
+      }
+      ,
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
