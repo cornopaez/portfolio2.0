@@ -22,7 +22,8 @@
         "styles.sass"
       ],
       "scripts": {
-        "postinstall": "ng build -prod"
+        "postinstall": "ng build -prod",
+        "start": "node server.js"
       }
       ,
       "environmentSource": "environments/environment.ts",
