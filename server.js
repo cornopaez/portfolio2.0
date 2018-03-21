@@ -19,6 +19,9 @@ connection.connect()
 // Use Helmet for security
 app.use(helmet());
 
+// Make use of the prerenderer for search engines
+app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
+
 // 
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
