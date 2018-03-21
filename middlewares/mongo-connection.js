@@ -19,7 +19,9 @@ function connect() {
 			if (err) reject(err);
 
 			console.log("Connected successfully to database");
-			_db = db.db('portfolio2');
+			var dbName = db.s.options.dbName
+			// console.log(db.s.options.dbName)
+			_db = db.db(dbName);
 			resolve(db);
 		});
 	});
