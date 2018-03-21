@@ -2,16 +2,21 @@
   "name": "portfolio2.0",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "server.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
+  "engines":{},
   "private": true,
   "dependencies": {
+    "@angular/cli": "^1.7.0",
+    "@angular/compiler-cli": "^4.2.4",
     "@angular/animations": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
