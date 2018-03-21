@@ -32,4 +32,6 @@ app.use('/data', data)
 // Main router -- ****OTHER ROUTERS NEED TO BE ABOVE THIS LINE!!!!******
 app.use("/", routes);
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+const port = process.env.PORT? process.env.PORT : 3000
+
+app.listen(port, () => console.log('Portfolio 2.0 up and running on port ' + port))

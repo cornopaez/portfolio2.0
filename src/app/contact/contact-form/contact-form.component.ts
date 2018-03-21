@@ -48,8 +48,11 @@ export class ContactFormComponent implements OnInit {
     user-friendly error in the browser's console.
   */
   onSubmit() {
+
+    // Set form as being submitted to avoid issues with the routing guard
     this.formSent = true
 
+    // Suscribe to the post request being made. If value comes back, we're good to go.
     this.dbs.submitContactForm(this.contactForm.value).subscribe(
       data => {
         if (data) {
