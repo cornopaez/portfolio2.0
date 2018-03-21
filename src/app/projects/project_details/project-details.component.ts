@@ -10,7 +10,7 @@ import { ProjectsComponent } from '../projects.component'
 export class ProjectsDetailsComponent implements OnInit {
 
   // Class variables
-  private currentContent;
+  currentContent;
 
   constructor(
     private route : ActivatedRoute,

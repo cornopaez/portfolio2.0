@@ -12,7 +12,10 @@
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod"
   },
-  "engines":{},
+  "engines":{
+    "npm":"5.7.1",
+    "node":"8.9.4"
+  },
   "private": true,
   "dependencies": {
     "@angular/cli": "^1.7.0",

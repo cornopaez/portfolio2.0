@@ -8,7 +8,7 @@ import { Title }     from '@angular/platform-browser';
 export class ProjectsComponent {
 
   // private currentContent
-  private currentContent = {
+  currentContent = {
       view_title: 'Mauricio_Páez | Projects',
       navbar: {
         title: 'Projects',

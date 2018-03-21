@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 
 export class ContactComponent {
   
-  private currentContent = {
+  currentContent = {
       view_title: 'Mauricio_Páez | Contact',
       navbar: {
         title: 'Contact',

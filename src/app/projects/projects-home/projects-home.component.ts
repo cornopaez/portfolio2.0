@@ -10,9 +10,9 @@ import { ProjectsComponent } from '../projects.component'
 })
 export class ProjectsHomeComponent implements OnInit {
 
-  private currentCards
+  currentCards
 
-  private currentContent = {
+  currentContent = {
       view_title: 'Mauricio_Páez | Projects',
       navbar: {
         title: 'Projects',

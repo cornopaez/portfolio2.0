@@ -12,7 +12,7 @@ import { BACKGROUND, LANGUAGES, EXPERIENCE, EDUCATION } from './about'
 
 export class AboutComponent {
   
-  private currentContent = {
+  currentContent = {
     view_title: 'Mauricio_Páez | About',
     navbar: {
       title: 'About',
@@ -24,10 +24,10 @@ export class AboutComponent {
     }
   }
 
-  private background = BACKGROUND
-  private languages = LANGUAGES
-  private experience = EXPERIENCE
-  private education = EDUCATION
+  background = BACKGROUND
+  languages = LANGUAGES
+  experience = EXPERIENCE
+  education = EDUCATION
 
   constructor(
     private title : Title

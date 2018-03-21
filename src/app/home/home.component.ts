@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 
 export class HomeComponent {
 
-  private currentContent = {
+  currentContent = {
       view_title: 'Mauricio_Páez | Developer',
       content: {
         image: '../assets/close-up.png',
@@ -20,8 +20,6 @@ export class HomeComponent {
         ]
       }
     };
-
-  private currentRoute;
 
   constructor(
     private title : Title
