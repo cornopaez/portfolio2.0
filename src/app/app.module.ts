@@ -30,7 +30,6 @@ import { RecaptchaModule } from 'ng-recaptcha';
 import { RecaptchaFormsModule } from 'ng-recaptcha/forms';
 import { DatabaseService } from './shared/database.service';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +59,7 @@ import { DatabaseService } from './shared/database.service';
     DatabaseService,
     DialogService,
     CanDeactivateGuard,
-    { provide: APP_BASE_HREF, useValue: 'http://localhost:3000' }
+    { provide: APP_BASE_HREF, useValue: 'http://www.cornopaez.com' }
   ],
   bootstrap: [AppComponent]
 })
