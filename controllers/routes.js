@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const dotenv = require('dotenv').config();
+const DIST_FOLDER = process.cwd() + '/dist';
 
 module.exports = router;
 
@@ -23,8 +24,7 @@ router.use('*', (req, res, next) => {
 
 // router.get('/', (req, res) => res.send('I\'m up and running!'))
 
-router.get('*', function (req, res) {
-	// Load landing page
-	res.sendFile('index.html', {root: "./dist" });
+router.get('*', (req, res) => {
+  res.render(DIST_FOLDER + '/index.html', { req });
 });
 

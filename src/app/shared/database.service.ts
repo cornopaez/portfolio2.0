@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, Optional } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { Router } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 import { ProjectCard } from '../projects/project-card'
 import { ContactSuccess } from '../contact/contact-success/contact-success'
@@ -13,10 +14,18 @@ import { ContactSuccess } from '../contact/contact-success/contact-success'
 @Injectable()
 export class DatabaseService {
 
+  getProjectsCardsUrl = '/data/projects'
+  getProjectDetailsUrl = '/data/'
+  submitContactFormUrl = '/data/contact'
+
   constructor(
     private http: HttpClient,
-    private router: Router
-    ) { }
+    private router: Router,
+    @Optional() @Inject(APP_BASE_HREF) origin: string) {
+      this.getProjectsCardsUrl = `${origin}${this.getProjectsCardsUrl}`;
+      this.getProjectDetailsUrl = `${origin}${this.getProjectDetailsUrl}`;
+      this.submitContactFormUrl = `${origin}${this.submitContactFormUrl}`;
+  }
 
   /**
     Retrieves the data necessary from the database for the view.
@@ -26,7 +35,7 @@ export class DatabaseService {
                                         and returns an empty array.
   */
   getProjectsCards() : Observable<ProjectCard[]> {
-    return this.http.get<Array<ProjectCard>>('/data/projects')
+    return this.http.get<Array<ProjectCard>>(this.getProjectsCardsUrl)
     .pipe(
       retry(3),
       catchError(this.handleError('getProjectsCards',[]))
@@ -43,7 +52,7 @@ export class DatabaseService {
 
   */
   getProjectDetails(name: string) : Observable<any> {
-    let url = '/data/' + name
+    let url = this.getProjectDetailsUrl + name
     return this.http.get(url)
       .pipe(
         retry(3),
@@ -60,7 +69,7 @@ export class DatabaseService {
                                   returns a null observable.
   */
   submitContactForm(contactInformation) : Observable<ContactSuccess> {
-    let url = '/data/contact'
+    let url = this.submitContactFormUrl
     return this.http.post<ContactSuccess>(url, contactInformation)
       .pipe(
         retry(3),
@@ -78,7 +87,7 @@ export class DatabaseService {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
-      // console.error(error); // log to console instead
+      console.error(JSON.stringify(error)); // log to console instead
 
       // TODO: better job of transforming error for user consumption
       console.error(`Could not perform the action requested. Specifically, ${operation}() failed: ${error.message}.`);

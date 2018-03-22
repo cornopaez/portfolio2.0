@@ -1,8 +1,10 @@
 // NG Imports
 import { BrowserModule, Title } from '@angular/platform-browser'
-import { NgModule } from '@angular/core'
+import { NgModule, PLATFORM_ID, APP_ID, Inject } from '@angular/core'
 import { HttpClientModule } from '@angular/common/http'
 import { ReactiveFormsModule, FormsModule }   from '@angular/forms'
+import { isPlatformBrowser } from '@angular/common';
+import { APP_BASE_HREF } from '@angular/common';
 
 // App imports
 import { AppRoutingModule }   from './routes.component'
@@ -44,7 +46,7 @@ import { DatabaseService } from './shared/database.service';
     ErrorComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'Portfolio2.0' }),
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -57,8 +59,17 @@ import { DatabaseService } from './shared/database.service';
     ProjectDetailResolver,
     DatabaseService,
     DialogService,
-    CanDeactivateGuard
+    CanDeactivateGuard,
+    { provide: APP_BASE_HREF, useValue: 'http://localhost:3000' }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  // constructor(
+  //   @Inject(PLATFORM_ID) private platformId: Object,
+  //   @Inject(APP_ID) private appId: string) {
+  //   const platform = isPlatformBrowser(platformId) ?
+  //     'in the browser' : 'on the server';
+  //   console.log(`Running ${platform} with appId=${appId}`);
+  // }
+}
