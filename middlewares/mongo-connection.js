@@ -9,7 +9,7 @@ module.exports =  {
 	connect: connect
 }
 
-const url = process.env.MONGODB_URI ? process.env.MONGODB_URI : process.env.MONGODB_LOCAL;
+const url = process.env.MONGOLAB_COPPER_URI ? process.env.MONGOLAB_COPPER_URI : process.env.MONGODB_LOCAL;
 
 // Creates a connection to MongoDB and returns the db object.
 function connect() {
