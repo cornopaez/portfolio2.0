@@ -5,7 +5,7 @@ import { ErrorObservable } from 'rxjs/observable/ErrorObservable';
 import { catchError, retry } from 'rxjs/operators';
 import { of } from 'rxjs/observable/of';
 import { Router } from '@angular/router';
-import { APP_BASE_HREF } from '@angular/common';
+// import { APP_BASE_HREF } from '@angular/common';
 
 import { ProjectCard } from '../projects/project-card'
 import { ContactSuccess } from '../contact/contact-success/contact-success'
@@ -21,10 +21,11 @@ export class DatabaseService {
   constructor(
     private http: HttpClient,
     private router: Router,
-    @Optional() @Inject(APP_BASE_HREF) origin: string) {
-      this.getProjectsCardsUrl = `${origin}${this.getProjectsCardsUrl}`;
-      this.getProjectDetailsUrl = `${origin}${this.getProjectDetailsUrl}`;
-      this.submitContactFormUrl = `${origin}${this.submitContactFormUrl}`;
+    // @Optional() @Inject(APP_BASE_HREF) origin: string
+    ) {
+      // this.getProjectsCardsUrl = `${origin}${this.getProjectsCardsUrl}`;
+      // this.getProjectDetailsUrl = `${origin}${this.getProjectDetailsUrl}`;
+      // this.submitContactFormUrl = `${origin}${this.submitContactFormUrl}`;
   }
 
   /**

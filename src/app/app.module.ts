@@ -45,7 +45,8 @@ import { DatabaseService } from './shared/database.service';
     ErrorComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'Portfolio2.0' }),
+    // BrowserModule.withServerTransition({ appId: 'Portfolio2.0' }),
+    BrowserModule,
     ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
@@ -58,8 +59,8 @@ import { DatabaseService } from './shared/database.service';
     ProjectDetailResolver,
     DatabaseService,
     DialogService,
-    CanDeactivateGuard,
-    { provide: APP_BASE_HREF, useValue: 'http://www.cornopaez.com' }
+    CanDeactivateGuard
+    // { provide: APP_BASE_HREF, useValue: 'http://www.cornopaez.com' }
   ],
   bootstrap: [AppComponent]
 })
