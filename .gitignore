@@ -43,3 +43,6 @@ Thumbs.db
 
 # DB Schemas
 db_schema.json
+
+#Environment Variables
+.env
